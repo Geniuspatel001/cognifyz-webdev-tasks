@@ -2,34 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Task 2 - JavaScript</title>
+  <title>Task 2 - Responsive</title>
+  <style>
+    body { margin:0; font-family: Arial; }
+    .navbar { background: #333; padding: 10px; }
+    .navbar a { color: white; padding: 8px; text-decoration: none; display: block; }
+    .menu { display: none; }
+    @media (max-width: 600px) {
+      .menu { display: block; cursor: pointer; color:white; }
+      .links { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>JavaScript Tasks</h1>
+  <div class="navbar">
+    <span class="menu" onclick="toggleMenu()">☰ Menu</span>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
 
-  <!-- Greeting -->
-  <button onclick="showGreeting()">Show Greeting</button>
-
-  <br><br>
-
-  <!-- Calculator -->
-  <input id="num1" type="number" placeholder="Enter first number">
-  <input id="num2" type="number" placeholder="Enter second number">
-  <button onclick="addNumbers()">Add</button>
-  <p id="result"></p>
+  <h1>Responsive Page</h1>
+  <p>Resize the window to see the responsive effect.</p>
 
   <script>
-    function showGreeting() {
-      let hour = new Date().getHours();
-      let message = hour < 12 ? "Good Morning!" :
-                    hour < 18 ? "Good Afternoon!" : "Good Evening!";
-      alert(message);
-    }
-
-    function addNumbers() {
-      let n1 = parseFloat(document.getElementById("num1").value);
-      let n2 = parseFloat(document.getElementById("num2").value);
-      document.getElementById("result").innerText = "Result: " + (n1 + n2);
+    function toggleMenu() {
+      const links = document.querySelector('.links');
+      links.style.display = links.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
