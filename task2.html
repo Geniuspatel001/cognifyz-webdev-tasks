@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 - Responsive</title>
+  <style>
+    body { margin:0; font-family: Arial; }
+    .navbar { background: #333; padding: 10px; }
+    .navbar a { color: white; padding: 8px; text-decoration: none; display: block; }
+    .menu { display: none; }
+    @media (max-width: 600px) {
+      .menu { display: block; cursor: pointer; color:white; }
+      .links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <span class="menu" onclick="toggleMenu()">☰ Menu</span>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <h1>Responsive Page</h1>
+  <p>Resize the window to see the responsive effect.</p>
+
+  <script>
+    function toggleMenu() {
+      const links = document.querySelector('.links');
+      links.style.display = links.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
